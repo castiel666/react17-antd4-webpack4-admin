@@ -1,0 +1,53 @@
+@import "../../../common.less";
+
+.mainPage{
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: hidden;
+}
+.formContainer{
+  padding: 30px;
+  max-width: 1200px;
+}
+.big{
+  border-top: 4px solid #1890ff;
+  border-radius: 2px;
+  background-color: #e8f0fe;
+  width: 100%;
+  color: #1890ff;
+  font-size: larger;
+  font-weight: bold;
+  height: 40px;
+  padding-top: 4px !important;
+}
+
+.btn{
+  margin-top: 50px;
+  margin-right: 20px;
+  min-width: 150px;
+}
+.submitBtn{
+  .btn;
+}
+.cancelBtn{
+  .btn;
+}
+
+.label{
+  text-align: right;
+  color: rgba(0,0,0,0.85);
+
+  &:before{
+    display: inline-block;
+    margin-right: 4px;
+    content: "*";
+    font-family: SimSun;
+    line-height: 1;
+    font-size: 14px;
+    color: #f04134;
+  }
+}
+
+.treeBox{
+  margin: 10px 0;
+}

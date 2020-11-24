@@ -1,0 +1,118 @@
+{{#if isSSR}}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1" />
+    <script src="/js/json3.js"></script>
+    <link rel="shortcut icon" href="images/logo.png" >
+
+    <title>后台管理平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="后台管理平台"/>
+    <meta name="description" content="后台管理平台"/>
+    <script>
+        //适配不同屏幕
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    clientWidth,
+                    recalc = function() {
+                        clientWidth = docEl.clientWidth;
+                        if(clientWidth<800){
+                            clientWidth = 800;
+                        }else if(clientWidth>3000){
+                            clientWidth = 3000
+                        }
+                        docEl.style.fontSize = (clientWidth/10) + 'px';
+                    };
+
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
+        body tbody {
+            background-color: transparent !important;
+        }
+        .title{
+            font-size: 35px;
+            position: absolute;
+            margin: auto;
+            color: #666666;
+            line-height: 30px;
+            text-align: center;
+            height: 400px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .subtitle{
+            font-size: 24px;
+            line-height: 120px;
+        }
+        .larger{
+            font-size: larger;
+            font-weight: bold;
+        }
+        .full {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .loading_container{
+            left:50%;top:50%;position:absolute;text-align:center;transform:translateX(-50%) translateY(-50%);-o-transform:translateX(-50%) translateY(-50%);-ms-transform:translateX(-50%) translateY(-50%);-moz-transform:translateX(-50%) translateY(-50%);-webkit-transform:translateX(-50%) translateY(-50%);
+        }
+
+        #load_img {
+            width:100%;animation:loadingRotate linear 2s;animation-iteration-count:infinite;transform-origin:50% 50%;-webkit-animation:loadingRotate linear 2s;-webkit-animation-iteration-count:infinite;-webkit-transform-origin:50% 50%;-moz-animation:loadingRotate linear 2s;-moz-animation-iteration-count:infinite;-moz-transform-origin:50% 50%;-o-animation:loadingRotate linear 1s;-o-animation-iteration-count:infinite;-o-transform-origin:50% 50%;-ms-animation:loadingRotate linear 2s;-ms-animation-iteration-count:infinite;-ms-transform-origin:50% 50%
+        }
+        @keyframes loadingRotate{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}@-moz-keyframes loadingRotate{0%{-moz-transform:rotate(0deg)}100%{-moz-transform:rotate(359deg)}}@-webkit-keyframes loadingRotate{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(359deg)}}@-o-keyframes loadingRotate{0%{-o-transform:rotate(0deg)}100%{-o-transform:rotate(359deg)}}@-ms-keyframes loadingRotate{0%{-ms-transform:rotate(0deg)}100%{-ms-transform:rotate(359deg)}}
+    </style>
+    <script>
+        var strictMode=function(){'use strict';return !this};var noStrict=function(){return !!this};window.checkIE={isIE:function(){return("ActiveXObject" in window)},isIE6:function(){return this.isIE()&&!window.XMLHttpRequest},isIE7:function(){return this.isIE()&&window.XMLHttpRequest&&document.documentMode==7},isIE8:function(){return this.isIE()&&!-[1,]&&document.documentMode==8},isIE9:function(){return !strictMode()&&noStrict()&&!!window.addEventListener&&this.isIE()},isIE10:function(){return strictMode()&&noStrict()&&!!window.attachEvent&&this.isIE()},isIE11:function(){return !window.attachEvent&&window.addEventListener&&this.isIE()}};
+
+        //是否显示日志
+        window.log = function () {
+            if ({{showLog}}) {
+                let args =  [].slice.call(arguments);
+                console.log(...args);
+            }
+        };
+    </script>
+</head>
+<body>
+<div id="root" class="full">
+    <!--[if gte IE 9]>
+    <div class="loading_container">
+        <img id="load_img" src="/images/loading.gif" alt="">
+    </div>
+    <![endif]-->
+    <!--[if !IE]><!-->
+    <div class="loading_container">
+        <img id="load_img" src="/images/loading.png" style="" alt="">
+    </div>
+    <!--<![endif]-->
+    <div class="title">
+        <div>后台管理平台</div>
+    </div>
+</div>
+<link rel="stylesheet" href="/project/apin.css">
+<link rel="stylesheet" href="/project/src.css">
+
+<script type="application/javascript" src="/project/spa.js"></script>
+</body>
+
+</html>
+{{else}}
+    <!DOCTYPE html> {{{body}}} {{/if}}

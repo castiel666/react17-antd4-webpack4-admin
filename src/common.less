@@ -1,0 +1,233 @@
+@import "./theme.less";
+.transition(@property: all, @duration: .3s,@timing-func: linear,@delay: 0s) {
+  transition: @property @duration @timing-func @delay;
+  -webkit-transition: @property @duration @timing-func @delay;
+  -moz-transition: @property @duration @timing-func @delay;
+  -o-transition: @property @duration @timing-func @delay;
+  -ms-transition: @property @duration @timing-func @delay;
+}
+
+//用于tab固定首页的样式
+.placeholder(@rules) {
+  &::-webkit-input-placeholder {
+    @rules();
+  }
+  &:-moz-placeholder { /* Firefox版本4-18 */
+    @rules();
+  }
+  &::-moz-placeholder { /* Firefox版本19+ */
+    @rules();
+  }
+  &:-ms-input-placeholder { /* IE浏览器 */
+    @rules();
+  }
+}
+
+.webkit_scrollbar() {
+  //&::-webkit-scrollbar-track {
+  //  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.6);
+  //  background-color: #081943;
+  //  border-radius: 10px;
+  //}
+  //&::-webkit-scrollbar {
+  //  width: 8px;
+  //  background-color: transparent;
+  //}
+  //&::-webkit-scrollbar-thumb {
+  //  border-radius: 5px;
+  //  background-color: #22234b;
+  //}
+}
+
+.linear() {
+  background-image: linear-gradient(90deg, rgba(102, 236, 251, .2) 0, rgba(19, 28, 49, 0) 98%);
+}
+
+.maintheme {
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.button {
+  width: 144px;
+  font-size: 16px;
+  border-radius: 4px;
+  height: 34px;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonrestvalue {
+  font-size: 14px;
+  width: 80px;
+  letter-spacing: 0;
+  border-radius: 4px;
+}
+
+.buttongetvalue {
+  font-size: 14px;
+  color: #1585ff;
+  background: #fff;
+  width: 80px;
+  border-radius: 4px;
+}
+
+.noSelect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently */
+}
+
+//表格中 操作栏按钮样式
+.btnText {
+  .noSelect;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.noText {
+  .btnText;
+  width: 24px;
+}
+
+.hiddenBtn {
+  .btnText;
+  visibility: hidden;
+}
+
+.btnDetail {
+  .btnText;
+  color: #67cfff;
+}
+
+.btnAdd {
+  .btnText;
+  color: #009900;
+}
+
+.btnEdit {
+  .btnText;
+  color: #0008ff;
+}
+
+.btnDelete {
+  .btnText;
+  color: red;
+}
+.containerTitle{
+  font-size: 18px;
+  text-indent: 20px;
+  margin-bottom: 10px;
+  color: #29A6FF;
+  letter-spacing: 1px;
+  &:before{
+    content: " ";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("./images/cloud.png");
+    background-size: 100% 100%;
+    margin-right: 5px;
+  }
+  &:after{
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(0deg, rgb(41, 166, 255) 0%, rgb(255, 255, 255) 100%);
+    background: -moz-linear-gradient(left, #29A6FF, #fff);
+    background: -o-linear-gradient(left, #29A6FF, #fff);
+    background: -webkit-gradient(linear, 0% 100%, 100% 0%, from(#29A6FF), to(#fff));
+  }
+}
+.returnPage{
+  float: left;
+  clear: both;
+  font-size: 16px;
+  padding-left: 30px;
+  color: #333;
+  cursor: pointer;
+  margin: 5px 40px;
+  &:before{
+    content: "<< ";
+    display: inline;
+  }
+  &:hover{
+    color: #3299ff;
+    &:before{
+      content: "<<<<< ";
+      display: inline;
+    }
+    padding-left: 0;
+  }
+}
+.nextPage{
+  float: right;
+  clear: both;
+  font-size: 16px;
+  padding-right: 30px;
+  color: #333;
+  margin: 5px 40px;
+  cursor: pointer;
+  &:after{
+    content: " >>";
+    display: inline;
+  }
+  &:hover{
+    color: #3299ff;
+    padding-right: 0;
+    &:after{
+      content: " >>>>>";
+      display: inline;
+    }
+  }
+}
+.toolBtn{
+  min-width: 120px;
+  margin: 20px 10px;
+}
+.jumpTitle{
+  &:after{
+    content: ' ';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./images/outIcon01.png");
+    background-size: 100% 100%;
+    vertical-align: text-bottom;
+    margin-left: 5px;
+  }
+}
+.jumpText{
+  cursor: pointer;
+  &:hover{
+    color: #29A6FF;
+  }
+}
+.stringType {
+  color: green;
+}
+
+.numberType {
+  color: darkorange;
+}
+
+.booleanType {
+  color: blue;
+}
+
+.nullType {
+  color: magenta;
+}
+
+.keyType {
+  color: red;
+}

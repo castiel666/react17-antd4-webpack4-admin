@@ -1,0 +1,63 @@
+@error-color:#e4393c;
+.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+
+}
+
+.btnBox{
+  box-sizing: border-box;
+  padding-top: 30px;
+  text-align: right;
+}
+.btn{
+  margin: 0 10px;
+}
+.redBtn{
+  background-color: @error-color!important;
+  border-color: @error-color!important;
+  color: #fff!important;
+
+  &:hover{
+    background-color: @error-color;
+    border-color: @error-color;
+    color: #fff;
+  }
+}
+.contentText{
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.tipText{
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 14px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.icon{
+  display: inline-block;
+  color: #2db7f5;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.redText{
+  color: @error-color;
+  padding: 0 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.greenText{
+  color: #01C12D;
+  padding: 0 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}

@@ -1,0 +1,146 @@
+@import "../../../node_modules/antd/lib/style/themes/default.less";
+@import "../../common.less";
+
+.colorStyle{
+	color: @font_label_color;
+	background-color: @background-color-base;
+}
+
+.btnSize{
+	width: @btn_double_width;
+	height: @btn_double_height;
+}
+
+.tabSelector{
+	position: relative;
+	z-index: 999;
+	cursor: pointer;
+	padding-top:16px;
+
+	.tabSelector_label{
+		text-align: center;
+		height: 40px;
+		line-height: 40px;
+		background-color: @background-color-base;
+		border-radius: 2px;
+		
+		.trangle{
+			content: "";
+			// width: @triangle * 2;
+			// height: @triangle;
+			border-left: @triangle solid transparent;
+			border-right: @triangle solid transparent;
+			border-top: @triangle solid @text_color_common;
+		}
+		& > i{
+			display: inline-block;
+			position: absolute;
+			top: 60%;
+			right: 8%;
+			width: @triangle*2;
+			height: @triangle;
+			.transition(transform);
+		}
+		& > i::after{
+			.trangle;
+			position: absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width: @triangle;
+			height: @triangle;
+		}
+		// &:hover{
+		// 	&> i{
+		// 		transform: rotate(180deg);
+		// 	}
+		// }
+	}
+	.hovestyle{
+		& .tabSelector_content{
+			z-index: 10;
+			position: absolute;
+			right: 0px;
+			transition: 1s linear;
+			.colorStyle;
+			.transition(opacity, .3s, cubic-bezier(.645,.045,.355,1));
+			.transition(height, .3s, cubic-bezier(.645,.045,.355,1));
+			border-radius: @borderRadius;
+			border-left: 1px solid rgba(128, 128, 128, 0.30);
+			border-right: 1px solid rgba(128, 128, 128, 0.30);
+			border-bottom: 1px solid rgba(128, 128, 128, 0.30);
+		}
+		&:hover{
+			& i{
+				transform: rotate(180deg);
+			}
+		}
+	}
+	.hovestyle_hide{
+		& .tabSelector_content{
+			height: 0;
+			width:0;
+			display: none;
+		}
+		& .tabSelector_label{
+			background: transparent;
+		}
+	}
+
+}
+.name{
+	display: inline-block;
+	.btnSize;
+	font-size: @font-size-base;
+	color:@text_color_common;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: transparent;
+}
+ .tabSelector_content_hide{
+	height: 0;
+	width:0;
+	display: none;
+}
+
+.tabSelector_showItem{
+	position: absolute;
+}
+
+.tabItem_close{
+	position: absolute;
+	width: 1px;
+	height: 15px;
+	right: 20px;
+	top:10px;
+	//background-color:@font_color;
+}
+
+.tabItem{
+	.btnSize;
+	line-height: @btn_double_height;
+	.tabItem_title{
+		width: @btn_double_width;
+		text-align: center;
+		&:hover{
+			color: @primary-color
+		}
+	}
+	.tabItem_info{
+		width: 40px;
+		text-align: center;
+	}
+}
+
+.tabItem_active{
+	color: white;
+	background-color: @primary-color;
+}
+
+.tabList_header_btn{
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	border-bottom: 1px solid black;
+}

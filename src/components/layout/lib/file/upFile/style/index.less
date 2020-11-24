@@ -1,0 +1,156 @@
+@imgW : 100px;
+@space :5px;
+@fontSize : 14px;
+@mainColor: #108ee9;
+
+
+.layout{
+  width: 100%;
+  padding: @space;
+}
+.viewModal{
+  text-align: center;
+}
+
+.fill{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+}
+.itemBase{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:contain;
+}
+.itemBaseFile{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:contain;
+  border: 1px solid #d9d9d9;
+  border-radius:@space;
+}
+
+
+.itemTitle{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  color: #ffffff;
+  text-align: center;
+  font-size: @fontSize*1.5;
+  width: 98%;
+  margin: 1%;
+  bottom: 0;
+}
+
+.itemAction{
+  width: 100%;
+  height:100%;
+  font-size: @fontSize*1.5;
+  color: #ffffff;
+  opacity: 0.6;
+  display: table;
+}
+.itemActionCell{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.itemActionCell:hover{
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.itemActionCellSee:hover{
+  color: @mainColor;
+}
+.itemActionCellDel:hover{
+  color: #ff0000;
+}
+
+.itemTitlePro{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  color: @mainColor;
+  font-size: @fontSize;
+  display: table;
+}
+.itemTitleProCell{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.circle{
+  max-height: 100%;
+}
+
+
+
+
+.file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:100%;
+
+}
+.fileTable{
+  width: 100%;
+  height:100%;
+  display: table;
+  text-align: center;
+  vertical-align: middle;
+  font-size: @fontSize;
+  background: #ffffff;
+  border: 1px solid @mainColor;
+  border-radius: 0;
+  overflow: hidden;
+  color: @mainColor;
+  text-decoration: none;
+  text-indent: 0;
+}
+.fileTitle{
+  display: table-cell;
+  width: 100%;
+  height:100%;
+  vertical-align: middle;
+  text-align: center;
+}
+.fileTable:hover {
+  background: @mainColor;
+  border-color: @mainColor;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+
+.item{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:contain;
+  display: block;
+  float: left;
+  position: relative;
+  width: @imgW;
+  height: @imgW;
+  margin: @space;
+}

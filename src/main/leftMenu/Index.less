@@ -1,0 +1,208 @@
+@import "../../common.less";
+
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.sider{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: @menu-width;
+  margin-top: @btn_double_width;
+  margin-bottom: @menu_collapse_btn_height;
+  bottom: 0;
+  overflow: auto;
+  background: @menu_bg_color;
+  .webkit_scrollbar();
+  .sider_sub_menu{
+    background: @menu_sub_bg_color;
+  }
+}
+
+.sider_hide{
+  .sider;
+  overflow: unset;
+  width: @menu-collapsed-width;
+}
+
+.right {
+  margin-left: @menu-width;
+  height: 100%;
+  min-width: @right_width;
+  position: relative;
+  overflow-x: auto;
+}
+
+.right_hide{
+  .right;
+  z-index: 0;
+  min-width: @right_hide_width;
+  margin-left: @menu-collapsed-width;
+}
+
+.littleBox{
+  color: #fff;
+}
+.headTitle{
+  color: #fff;
+  font-size: 16px;
+}
+.littleLogo{
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  margin:0 auto;
+  border-radius: 50%;
+  border: @border_width solid #FFFFFF;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+.logoLayout {
+  position: fixed;
+  top: 0;
+  width: @menu-width;
+  height: @btn_double_width;
+  padding-top:30px;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+  text-align: center;
+  background: @menu_logo_bg_color;
+}
+.logoLayout_hide{
+  .logoLayout;
+  width: @menu-collapsed-width;
+}
+
+.top {
+  width:100%;
+  height: @banner_height;
+  padding-bottom: @banner_padding_bottom;
+  line-height: @btn_single_height*2;
+  background: @layout_color;
+
+  .title{
+    margin-left: 40px;
+  float: left;
+  font-size: @font_size_title;
+  }
+  .top_icon{
+    float: right;
+    line-height: 68px;
+  }
+  .top_menu{
+    float: right;
+    padding-right: 20px;
+    line-height: 68px;
+  }
+}
+
+.logo2 {
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  margin:0 auto;
+  border-radius: 50%;
+  border: @border_width solid #FFFFFF;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+
+}
+
+.logo1 {
+  display: none;
+}
+
+.btn1 {
+  position: relative;
+  bottom:35px;
+  margin:0;
+  margin-bottom: 35px;
+}
+.bottom{
+  display: table;
+  position: fixed;
+  bottom: 0;
+  height: @menu_collapse_btn_height;
+  width:@menu-width;
+  font-size: @font-size-base;
+  padding: 0 @menu_collapsed_padding;
+  text-align: right;
+  background:@menu_bg_color;
+  cursor:pointer;
+  //color: @primary-color;
+  .icon_fold{
+    color: #fff;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .icon_fold_left{
+    .icon_fold;
+    text-align: left;
+  }
+  .icon_fold_right{
+    .icon_fold;
+    text-align: right;
+  }
+}
+
+.bottom_collapsed{
+  .bottom;
+  width: @menu-collapsed-width;
+  .icon_fold_left{
+    text-align: center;
+  }
+}
+
+.menuIcon(){
+  width: @icon_radius;
+  height: @icon_radius;
+  margin-right: @menu_icon_margin - 5px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+.menu_icon{
+  .menuIcon();
+  display: inline-block;
+}
+
+.menu_icon_active{
+  .menuIcon();
+  display: none;
+}
+
+.submenu_cover{
+  width: 100%;
+  height: 100%;
+
+  &:hover, &_active{
+    .menu_icon{
+      display: none;
+    }
+    .menu_icon_active{
+      display: inline-block;
+    }
+  }
+}
+
+.collapsedItem{
+  padding: 5px 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover{
+    color: #4fb6ff;
+  }
+}

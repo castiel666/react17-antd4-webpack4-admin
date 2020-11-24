@@ -1,0 +1,22 @@
+@import "../../../node_modules/antd/lib/style/themes/default.less";
+@import "../../common.less";
+//填充满上级布局
+.css_layout_full{
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  right: 0rem;
+  bottom: 0rem;
+  z-index: 2;
+}
+//填充满上级布局
+.contentFull{
+  .css_layout_full;
+
+  overflow:hidden;
+}
+.contentWhite{
+  position: absolute;
+  .css_layout_full;
+  background: @white_bg_color;
+}
